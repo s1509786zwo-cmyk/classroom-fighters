@@ -1,0 +1,13 @@
+{
+  "name": "classroom-fighters-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "教室ファイターズ ANIMATION EDITION - online room server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
