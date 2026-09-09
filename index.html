@@ -50,6 +50,14 @@
 #cmdP{position:absolute!important;left:1.2%!important;right:auto!important;top:23%!important;z-index:2!important}
 #cmdE{position:absolute!important;right:1.2%!important;left:auto!important;top:23%!important;z-index:2!important}
 .fighter{position:absolute!important;z-index:10!important}
+
+/* FINAL LAYERING FIX: fighters must always be in front of command panels */
+.hud{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:2!important;pointer-events:none!important;}
+.hud .cmd{position:absolute!important;z-index:2!important;opacity:.48!important;background:rgba(5,9,18,.72)!important;}
+.hud #cmdP{left:1.2%!important;right:auto!important;}
+.hud #cmdE{right:1.2%!important;left:auto!important;}
+.fighter{position:absolute!important;z-index:10!important;}
+#effects,#damage{z-index:12!important;}
 </style></style></head><body><div id="app">
 <section id="menu" class="screen active"><div class="panel"><h1>教室ファイターズ</h1><p class="sub">ANIMATION EDITION — 4 CHARACTER FIGHTING GAME</p><div class="modeRow"><button id="cpuBtn" class="modeBtn primary" type="button">🤖 CPU対戦</button><button id="localBtn" class="modeBtn blue" type="button">👥 2Pローカル対戦</button><button id="onlineBtn" class="modeBtn online" type="button">🌐 友達と対戦</button></div><div class="audio-panel"><button id="musicBtn" class="soundBtn" type="button">♪ メニュー音楽 ON</button><span id="audioStatus">最初のボタン操作で音楽が始まります</span></div><p class="tiny">アニメーション・エフェクト・クリアな打撃音・ガード音を搭載｜友達と対戦はNode.js通信に接続</p></div></section>
 <section id="online" class="screen"><div class="panel online-panel"><h1>FRIEND MATCH</h1><p class="sub">3文字のあいことばが一致した2人だけが同じ対戦室に入れます</p><div class="online-card"><label for="roomCode">あいことば（日本語3文字）</label><input id="roomCode" maxlength="3" autocomplete="off" inputmode="text" placeholder="例：さくら"><button id="onlineJoinBtn" class="actionBtn primary" type="button">対戦室に入る</button><div id="onlineStatus" class="status">友達と同じ3文字を入力してください。</div></div><div class="online-note">同じあいことばを2人が入力すると自動的にキャラクター選択へ進みます。対戦開始は2人とも押す必要があります。</div><button id="onlineHomeBtn" class="actionBtn" type="button">戻る</button></div></section>
